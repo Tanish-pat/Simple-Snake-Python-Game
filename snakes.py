@@ -151,6 +151,10 @@ def main():
         pygame.time.delay(50)
         clock.tick(10)
         s.move()
+        if len(s.body) >= 50:
+            messageBox("Congratulations!", "You've reached a length of 50! You Win!")
+            pygame.quit()  
+            return
         if s.body[0].pos==snack.pos:
             s.addCube()
             snack=cube(randomSnack(rows,s),color=(0,255,0))
